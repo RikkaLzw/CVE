@@ -37,7 +37,5 @@ The `BATBToken` contract contains several functions with inadequate access contr
 
 **Design Flaw**: The contract architecture allows critical administrative functions to be called by any user, which violates the principle of least privilege.
 
-**Impact on Tokenomics**: Unauthorized whitelist manipulation can disrupt the intended tokenomics, including transfer restrictions, fee mechanisms, and dividend distributions.
-
 ## Conclusion
 This vulnerability is due to incorrect access control implementation in the `BATBToken` contract's whitelist management functions. The impact of this vulnerability is significant as it allows unauthorized users to bypass critical transfer restrictions and manipulate special address settings. It's recommended that proper access control modifiers (such as `onlyOwner`) be implemented for all administrative functions to prevent unauthorized access and maintain the integrity of the token's economic model.
